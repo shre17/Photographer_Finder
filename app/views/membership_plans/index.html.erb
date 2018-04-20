@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Membership Plans</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price per six months</th>
+      <th>Feature one</th>
+      <th>Feature two</th>
+      <th>Feature three</th>
+      <th>Feature four</th>
+      <th>Feature five</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @membership_plans.each do |membership_plan| %>
+      <tr>
+        <td><%= membership_plan.name %></td>
+        <td><%= membership_plan.price_per_six_months %></td>
+        <td><%= membership_plan.feature_one %></td>
+        <td><%= membership_plan.feature_two %></td>
+        <td><%= membership_plan.feature_three %></td>
+        <td><%= membership_plan.feature_four %></td>
+        <td><%= membership_plan.feature_five %></td>
+        <td><%= link_to 'Show', membership_plan %></td>
+        <td><%= link_to 'Edit', edit_membership_plan_path(membership_plan) %></td>
+        <td><%= link_to 'Destroy', membership_plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Membership Plan', new_membership_plan_path %>

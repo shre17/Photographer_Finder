@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @membership_plan.name %>
+</p>
+
+<p>
+  <strong>Price per six months:</strong>
+  <%= @membership_plan.price_per_six_months %>
+</p>
+
+<p>
+  <strong>Feature one:</strong>
+  <%= @membership_plan.feature_one %>
+</p>
+
+<p>
+  <strong>Feature two:</strong>
+  <%= @membership_plan.feature_two %>
+</p>
+
+<p>
+  <strong>Feature three:</strong>
+  <%= @membership_plan.feature_three %>
+</p>
+
+<p>
+  <strong>Feature four:</strong>
+  <%= @membership_plan.feature_four %>
+</p>
+
+<p>
+  <strong>Feature five:</strong>
+  <%= @membership_plan.feature_five %>
+</p>
+
+<%= link_to 'Edit', edit_admin_membership_plan_path(@membership_plan) %> |
+<%= link_to 'Back', admin_membership_plans_path %>

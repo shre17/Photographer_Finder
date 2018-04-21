@@ -1,0 +1,181 @@
+<%= form_for([:admin, @photographer]) do |form| %>
+  <% if photographer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(photographer.errors.count, "error") %> prohibited this photographer from being saved:</h2>
+
+      <ul>
+      <% photographer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="card mt-4 mb-2">
+    <div class="card-header">
+      <h3 class="card-title">Personal Information</h3>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :first_name %>
+            <%= form.text_field :first_name, id: :photographer_first_name, class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :last_name %>
+            <%= form.text_field :last_name, id: :photographer_last_name, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <%= form.label :contact %>
+            <%= form.text_field :contact, id: :photographer_contact, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mt-4 mb-2">
+    <div class="card-header">
+      <h3 class="card-title">Address Information</h3>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <%= form.label :address %>
+            <%= form.text_field :address, id: :photographer_address, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :city %>
+            <%= form.text_field :city, id: :photographer_city, class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :state %>
+            <%= form.text_field :state, id: :photographer_state, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :country %>
+            <%= form.text_field :country, id: :photographer_country, class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :zipcode %>
+            <%= form.text_field :zipcode, id: :photographer_zipcode, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mt-4 mb-2">
+    <div class="card-header">
+      <h3 class="card-title">Account Information</h3>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <%= form.label :email %>
+            <%= form.email_field :email, id: :photographer_email, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :username %>
+            <%= form.text_field :username, id: :photographer_username, class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :password %>
+            <%= form.password_field :password, id: :photographer_password, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mt-4 mb-2">
+    <div class="card-header">
+      <h3 class="card-title">Social Information</h3>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :facebook_page_url %>
+            <%= form.text_field :facebook_page_url, id: :photographer_facebook_page_url, class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :linkedin_page_url %>
+            <%= form.text_field :linkedin_page_url, id: :photographer_linkedin_page_url, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :google_plus_page_url %>
+            <%= form.text_field :google_plus_page_url, id: :photographer_google_plus_page_url, class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :twitter_page_url %>
+            <%= form.text_field :twitter_page_url, id: :photographer_twitter_page_url, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mt-4 mb-2">
+    <div class="card-header">
+      <h4 class="card-title">General Information</h4>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <%= form.label :about %>
+            <%= form.text_area :about, id: :photographer_about, class: "form-control", rows: "6" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <%= form.label :experience_of_photography %>
+            <%= form.text_field :experience_of_photography, id: :photographer_experience_of_photography, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="actions">
+    <%= form.submit class: "btn btn-success" %>
+  </div>
+<% end %>

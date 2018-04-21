@@ -1,0 +1,77 @@
+<%= form_for([:admin, @membership_plan]) do |form| %>
+  <% if membership_plan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(membership_plan.errors.count, "error") %> prohibited this membership_plan from being saved:</h2>
+
+      <ul>
+      <% membership_plan.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="card mt-4 mb-2">
+    <div class="card-header">
+      <h3 class="card-title">Article</h3>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :name %>
+            <%= form.text_field :name, id: :membership_plan_name, class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :price_per_six_months %>
+            <%= form.text_field :price_per_six_months, id: :membership_plan_price_per_six_months, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :feature_one %>
+            <%= form.text_field :feature_one, id: :membership_plan_feature_one, class: "form-control"%>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :feature_two %>
+            <%= form.text_field :feature_two, id: :membership_plan_feature_two, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :feature_three %>
+            <%= form.text_field :feature_three, id: :membership_plan_feature_three, class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :feature_four %>
+            <%= form.text_field :feature_four, id: :membership_plan_feature_four, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :feature_five %>
+            <%= form.text_field :feature_five, id: :membership_plan_feature_five, class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-md-6">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-success" %>
+  </div>
+<% end %>

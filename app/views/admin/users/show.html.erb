@@ -1,0 +1,36 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>First name:</strong>
+    <%= @user.first_name %>
+  </p>
+
+  <p>
+    <strong>Last name:</strong>
+    <%= @user.last_name %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </p>
+
+  <p>
+    <strong>Password:</strong>
+    <%= @user.password %>
+  </p>
+
+  <p>
+    <strong>Username:</strong>
+    <%= @user.username %>
+  </p>
+
+  <p>
+    <strong>Profile photo:</strong>
+    <%= @user.profile_photo %>
+  </p>
+
+  <%= link_to 'Edit', edit_admin_user_path(@user) %> |
+  <%= link_to 'Back', admin_users_path %>
+</div>

@@ -1,0 +1,20 @@
+<div class="jumbotron">
+  <h1 class="display-6">Editing Article</h1>
+  <%= link_to admin_articles_path, class: "btn btn-primary btn-md" do %>
+    <i class="fa fa-arrow-left"></i> Back to list
+  <% end %>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <%= render 'form', article: @article %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 offset-md-2 mt-2">
+      <%= link_to 'Show', admin_article_path(@article) %> |
+      <%= link_to 'Back', admin_articles_path %>
+    </div>
+  </div>
+</div>

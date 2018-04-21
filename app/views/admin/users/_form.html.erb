@@ -1,0 +1,66 @@
+<%= form_for([:admin, @user]) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+   <div class="card mt-4 mb-2">
+    <div class="card-header">
+      <h3 class="card-title">Personal Information</h3>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :first_name %>
+            <%= form.text_field :first_name, id: :user_first_name, class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :last_name %>
+            <%= form.text_field :last_name, id: :user_last_name, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :email %>
+            <%= form.email_field :email, id: :user_email, class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :password %>
+            <%= form.password_field :password, id: :user_password, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :username %>
+            <%= form.text_field :username, id: :user_username, class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :profile_photo %>
+            <%= form.file_field :profile_photo, id: :user_profile_photo, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="actions">
+    <%= form.submit class: "btn btn-success"%>
+  </div>
+<% end %>

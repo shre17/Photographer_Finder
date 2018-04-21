@@ -1,12 +1,31 @@
 Rails.application.routes.draw do
-  resources :articles
-  resources :membership_plans
-  resources :albums do 
-    collection do
-      post :upload_album_image
-    end 
+  resources :articles, only: [:show, :index]
+  
+  resources :albums, only: [:show, :index]
+
+  namespace :photographer do 
+    resources :articles
+    resources :albums do 
+      collection do
+        post :upload_album_image
+      end 
+    end
   end
+
+  namespace :admin do 
+    resources :articles
+    resources :photographers
+    resources :users
+    resources :membership_plans
+    resources :albums do 
+      collection do
+        post :upload_admin_album_image
+      end 
+    end
+  end
+  
   delete '/remove_album_image/:id' => "abulms#remove_album_image"
+  delete '/remove_admin_album_image/:id' => "admin_abulms#remove_admin_album_image"
   devise_for :admins, controllers: {
         sessions: 'admins/sessions',
         registration: 'admins/registrations'

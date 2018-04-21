@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container mt-5">
   <div class="row">
     <div class="col-md-4 offset-md-4"> 
       <div class="card card-outline-secondary">
         <div class="card-header">
-          <h3 class="mb-0">Forgot your password?</h3>
+          <h3 class="mb-0 card-head">Forgot your password?</h3>
         </div>
         <div class="card-body">
           <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
@@ -15,7 +15,7 @@
             </div>
 
             <div class="actions">
-              <%= f.submit "Send me reset password instructions", class: "btn btn-block login-btn" %>
+              <%= f.submit "Send me reset password instructions", class: "btn btn-block btn-success" %>
             </div>
           <% end %>
           <div class="mt-2 mb-2">

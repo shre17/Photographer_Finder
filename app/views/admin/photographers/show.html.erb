@@ -1,0 +1,101 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>First name:</strong>
+    <%= @photographer.first_name %>
+  </p>
+
+  <p>
+    <strong>Last name:</strong>
+    <%= @photographer.last_name %>
+  </p>
+
+  <p>
+    <strong>Contact:</strong>
+    <%= @photographer.contact %>
+  </p>
+
+  <p>
+    <strong>Address:</strong>
+    <%= @photographer.address %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= @photographer.email %>
+  </p>
+
+  <p>
+    <strong>Password:</strong>
+    <%= @photographer.password %>
+  </p>
+
+  <p>
+    <strong>City:</strong>
+    <%= @photographer.city %>
+  </p>
+
+  <p>
+    <strong>State:</strong>
+    <%= @photographer.state %>
+  </p>
+
+  <p>
+    <strong>Country:</strong>
+    <%= @photographer.country %>
+  </p>
+
+  <p>
+    <strong>Zipcode:</strong>
+    <%= @photographer.zipcode %>
+  </p>
+
+  <p>
+    <strong>Facebook page url:</strong>
+    <%= @photographer.facebook_page_url %>
+  </p>
+
+  <p>
+    <strong>Linkedin page url:</strong>
+    <%= @photographer.linkedin_page_url %>
+  </p>
+
+  <p>
+    <strong>Google plus page url:</strong>
+    <%= @photographer.google_plus_page_url %>
+  </p>
+
+  <p>
+    <strong>Twitter page url:</strong>
+    <%= @photographer.twitter_page_url %>
+  </p>
+
+  <p>
+    <strong>Experience of photography:</strong>
+    <%= @photographer.experience_of_photography %>
+  </p>
+
+  <p>
+    <strong>About:</strong>
+    <%= @photographer.about %>
+  </p>
+
+  <p>
+    <strong>Latitude:</strong>
+    <%= @photographer.latitude %>
+  </p>
+
+  <p>
+    <strong>Longitude:</strong>
+    <%= @photographer.longitude %>
+  </p>
+
+  <p>
+    <strong>Username:</strong>
+    <%= @photographer.username %>
+  </p>
+
+  <%= link_to 'Edit', edit_admin_photographer_path(@photographer) %> |
+  <%= link_to 'Back', admin_photographers_path %>
+</div>

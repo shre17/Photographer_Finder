@@ -29,28 +29,26 @@
 
 
 <script type="text/javascript">
-  $(document).ready(function() {
-    $(function () {
-      $(".dropzone").dropzone({
-        paramName: "upload[image]",
-        addRemoveLinks: true,
-        success: function(file, response) {
-          $(file.previewElement).find('.dz-remove').attr('id', response.id);
-          $(file.previewElement).addClass('dz-success');
-        },
-        removedfile: function(file) {
-          var id = $(file.previewTemplate).find('.dz-remove').attr('id');
-          $.ajax({
-            type: 'DELETE',
-            url: "/remove_album_image/" + id,
-            success: function(data) {
-              console.log(data.message);
-            }
-          });
-          var previewElement;
-          return (previewElement = file.previewElement) != null ? (previewElement.parentNode.removeChild(file.previewElement)) : (void 0);
-        },
-      });
+  $(function () {
+    $(".dropzone").dropzone({
+      paramName: "upload[image]",
+      addRemoveLinks: true,
+      success: function(file, response) {
+        $(file.previewElement).find('.dz-remove').attr('id', response.id);
+        $(file.previewElement).addClass('dz-success');
+      },
+      removedfile: function(file) {
+        var id = $(file.previewTemplate).find('.dz-remove').attr('id');
+        $.ajax({
+          type: 'DELETE',
+          url: "/remove_album_image/" + id,
+          success: function(data) {
+            console.log(data.message);
+          }
+        });
+        var previewElement;
+        return (previewElement = file.previewElement) != null ? (previewElement.parentNode.removeChild(file.previewElement)) : (void 0);
+      },
     });
-  });  
+  });
 </script>

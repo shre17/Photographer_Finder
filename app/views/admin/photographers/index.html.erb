@@ -1,63 +1,63 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<h1>Photographers</h1>
+  <h1>Photographers</h1>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead class="table-light">
+        <tr>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>Contact</th>
+          <th>Address</th>
+          <th>Email</th>
+          <th>Password</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Country</th>
+          <th>Zipcode</th>
+          <th>Facebook page url</th>
+          <th>Linkedin page url</th>
+          <th>Google plus page url</th>
+          <th>Twitter page url</th>
+          <th>Experience of photography</th>
+          <th>About</th>
+          <th>Latitude</th>
+          <th>Longitude</th>
+          <th>Username</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Contact</th>
-      <th>Address</th>
-      <th>Email</th>
-      <th>Password</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Country</th>
-      <th>Zipcode</th>
-      <th>Facebook page url</th>
-      <th>Linkedin page url</th>
-      <th>Google plus page url</th>
-      <th>Twitter page url</th>
-      <th>Experience of photography</th>
-      <th>About</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
-      <th>Username</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @photographers.each do |photographer| %>
-      <tr>
-        <td><%= photographer.first_name %></td>
-        <td><%= photographer.last_name %></td>
-        <td><%= photographer.contact %></td>
-        <td><%= photographer.address %></td>
-        <td><%= photographer.email %></td>
-        <td><%= photographer.password %></td>
-        <td><%= photographer.city %></td>
-        <td><%= photographer.state %></td>
-        <td><%= photographer.country %></td>
-        <td><%= photographer.zipcode %></td>
-        <td><%= photographer.facebook_page_url %></td>
-        <td><%= photographer.linkedin_page_url %></td>
-        <td><%= photographer.google_plus_page_url %></td>
-        <td><%= photographer.twitter_page_url %></td>
-        <td><%= photographer.experience_of_photography %></td>
-        <td><%= photographer.about %></td>
-        <td><%= photographer.latitude %></td>
-        <td><%= photographer.longitude %></td>
-        <td><%= photographer.username %></td>
-        <td><%= link_to 'Show', admin_photographer_path(photographer) %></td>
-        <td><%= link_to 'Edit', edit_admin_photographer_path(photographer) %></td>
-        <td><%= link_to 'Destroy', admin_photographer_path(photographer), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Photographer', new_admin_photographer_path %>
+      <tbody>
+        <% @photographers.each do |photographer| %>
+          <tr>
+            <td><%= photographer.first_name %></td>
+            <td><%= photographer.last_name %></td>
+            <td><%= photographer.contact %></td>
+            <td><%= photographer.address %></td>
+            <td><%= photographer.email %></td>
+            <td><%= photographer.password %></td>
+            <td><%= photographer.city %></td>
+            <td><%= photographer.state %></td>
+            <td><%= photographer.country %></td>
+            <td><%= photographer.zipcode %></td>
+            <td><%= photographer.facebook_page_url %></td>
+            <td><%= photographer.linkedin_page_url %></td>
+            <td><%= photographer.google_plus_page_url %></td>
+            <td><%= photographer.twitter_page_url %></td>
+            <td><%= photographer.experience_of_photography %></td>
+            <td><%= photographer.about %></td>
+            <td><%= photographer.latitude %></td>
+            <td><%= photographer.longitude %></td>
+            <td><%= photographer.username %></td>
+            <td><%= link_to 'Show', admin_photographer_path(photographer) %></td>
+            <td><%= link_to 'Edit', edit_admin_photographer_path(photographer) %></td>
+            <td><%= link_to 'Destroy', admin_photographer_path(photographer), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= link_to 'New Photographer', new_admin_photographer_path %>
+  </div>
+</div>

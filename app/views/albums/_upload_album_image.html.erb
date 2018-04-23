@@ -1,0 +1,7 @@
+<%= form_for :upload_images, url: :upload_album_image_albums, html: { multipart: true, class: "dropzone"} do |f|  %>
+  <%= f.hidden_field :album_id, value: @album.id %>
+  <div class="fallback">
+    <%= f.file_field :image %><br>
+    <%= f.submit "Upload" %>
+  </div>
+<% end %>

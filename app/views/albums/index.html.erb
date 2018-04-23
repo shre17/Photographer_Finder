@@ -19,8 +19,8 @@
         <td><%= album.description %></td>
         <td><%= album.photographers %></td>
         <td><%= link_to 'Show', album %></td>
-        <td><%= link_to 'Edit', edit_album_path(album) %></td>
-        <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <!-- <td><%#= link_to 'Edit', edit_album_path(album) %></td>
+        <td><%#= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Album', new_album_path %>
+<%#= link_to 'New Album', new_album_path %>

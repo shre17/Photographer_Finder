@@ -1,0 +1,13 @@
+<div class="jumbotron">
+  <h1 class="display-6">Add New Album</h1>
+  <%= link_to photographer_albums_path, class: "btn btn-primary btn-md" do %>
+    <i class="fa fa-arrow-left"></i> Back to list
+  <% end %>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <%= render 'form', album: @album %>
+    </div>
+  </div>
+</div>

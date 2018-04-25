@@ -1,6 +1,8 @@
 class Admin::PhotographersController < ApplicationController
   before_action :set_photographer, only: [:show, :edit, :update, :destroy]
 
+  layout 'admin'
+
   def index
     @photographers = Photographer.all
   end

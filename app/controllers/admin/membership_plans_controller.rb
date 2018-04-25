@@ -1,6 +1,8 @@
 class Admin::MembershipPlansController < ApplicationController
   before_action :set_membership_plan, only: [:show, :edit, :update, :destroy]
 
+  layout 'admin'
+
   def index
     @membership_plans = MembershipPlan.all
   end

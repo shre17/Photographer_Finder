@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :articles
     resources :albums do 
       collection do
-        post :upload_album_image
+        post :upload_photographer_album_image
       end 
     end
   end
@@ -24,8 +24,9 @@ Rails.application.routes.draw do
     end
   end
   
-  delete '/remove_album_image/:id' => "abulms#remove_album_image"
-  delete '/remove_admin_album_image/:id' => "admin_abulms#remove_admin_album_image"
+  delete '/remove_album_image/:id' => "albums#remove_album_image"
+  delete '/remove_admin_album_image/:id' => "admin_albums#remove_admin_album_image"
+  delete '/remove_photographer_album_image/:id' => "photographer_albums#remove_photographer_album_image"
   devise_for :admins, controllers: {
         sessions: 'admins/sessions',
         registration: 'admins/registrations'

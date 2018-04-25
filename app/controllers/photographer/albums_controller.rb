@@ -1,7 +1,7 @@
-class Admin::AlbumsController < ApplicationController
+class Photographer::AlbumsController < ApplicationController
   before_action :set_album, only: [:show, :edit, :update, :destroy]
 
-  layout 'admin'
+  layout 'photographer'
 
   def index
     @albums = Album.all
@@ -10,7 +10,7 @@ class Admin::AlbumsController < ApplicationController
   def show
   end
 
-  def upload_admin_album_image
+  def upload_photographer_album_image
     @albums = Album.find(params[:upload_images][:album_id])
     @image = @albums.images.build(image: params[:upload][:image])
     if @image.save!
@@ -20,8 +20,8 @@ class Admin::AlbumsController < ApplicationController
     end
   end
 
-  def remove_admin_album_image
-   @image = Album.find(params[:upload_images][:album_id])
+  def remove_photographer_album_image
+   @image = Album.find(params[:id])
    if @image.destroy
     render json: { message: "file delete from server"}
    else
@@ -40,7 +40,7 @@ class Admin::AlbumsController < ApplicationController
     @album = Album.new(album_params)
     respond_to do |format|
       if @album.save
-        format.html { redirect_to admin_album_path(@album), notice: 'Album was successfully created.' }
+        format.html { redirect_to photographer_album_path(@album), notice: 'Album was successfully created.' }
         format.json { render :show, status: :created, location: @album }
       else
         format.html { render :new }
@@ -52,7 +52,7 @@ class Admin::AlbumsController < ApplicationController
   def update
     respond_to do |format|
       if @album.update(album_params)
-        format.html { redirect_to admin_album_path(@album), notice: 'Album was successfully updated.' }
+        format.html { redirect_to photographer_album_path(@album), notice: 'Album was successfully updated.' }
         format.json { render :show, status: :ok, location: @album }
       else
         format.html { render :edit }
@@ -64,7 +64,7 @@ class Admin::AlbumsController < ApplicationController
   def destroy
     @album.destroy
     respond_to do |format|
-      format.html { redirect_to admin_albums_url, notice: 'Album was successfully destroyed.' }
+      format.html { redirect_to photographer_albums_url, notice: 'Album was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
